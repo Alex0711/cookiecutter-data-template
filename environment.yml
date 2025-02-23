@@ -1,0 +1,8 @@
+name: personal-cookicutter
+channels:
+  - conda-forge
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+dependencies:
+  - cookiecutter=1.7.3
+prefix: /home/alex/anaconda3/envs/personal-cookicutter

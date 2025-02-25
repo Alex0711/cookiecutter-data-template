@@ -1,8 +1,9 @@
 {
-  "project_title": "My Project",
+  "project_title": "Project Name",
   "project_slug": "{{ cookiecutter.project_title.lower().replace(' ', '_').replace('-', '_') }}",
   "project_description": "Something nice",
   "project_author_name": "Alejandro S.",
-  "project_packages": ["All", "Minimal"],
+  "version": "0.1.0",
+  "environment": ["venv", "conda"],
   "python_version": "3.12"
 }

@@ -21,17 +21,16 @@ def run_command(command, error_message):
 print(f"{MESSAGE_COLOR}Setting up the environment...{RESET_ALL}")
 
 if environment == "conda":
-    run_command(f"conda env create -f {project_slug}/environment.yml", "Failed to create Conda environment")
-    os.remove(f"{project_slug}/requirements.txt")  # 🔥 Eliminar el innecesario
+    run_command(f"conda env create -f environment.yml", "Failed to create Conda environment")
+    run_command(f"rm -rf requirements.txt", "Failed to remove requirements.txt")
     print(f"{MESSAGE_COLOR}Conda environment created!{RESET_ALL}")
-    run_command(f"conda activate {project_slug}", "Failed to activate Conda environment")
 
 else:
     
     run_command("python3 -m venv venv", "Failed to create venv")    
     run_command("venv/bin/python -m pip install --upgrade pip", "Failed to upgrade pip")
     run_command("venv/bin/python -m pip install -r requirements.txt", "Failed to install dependencies")
-    run_command("rm -rf environment.yml", "Failed to install dependencies")
+    run_command("rm -rf environment.yml", "Failed to remove environment.yml")
     print(f"{MESSAGE_COLOR}Virtual environment created!{RESET_ALL}")
 
 print(f"{MESSAGE_COLOR}Initializing Git repository...{RESET_ALL}")
